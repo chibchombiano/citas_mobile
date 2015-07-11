@@ -1,4 +1,5 @@
 angular.module('fixes')
+/*
 .service('$ionicLoading', [function () {
 
 	var dataFactory = {};
@@ -14,6 +15,7 @@ angular.module('fixes')
 	return dataFactory;
 	
 }])
+*/
 
 .service('$cordovaCamera', [function () {
 

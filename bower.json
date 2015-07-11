@@ -2,6 +2,10 @@
   "name": "citas_medicas",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.0.1"
+    "ionic": "driftyco/ionic-bower#1.0.1",
+    "ionic-timepicker": "~0.2.0"
+  },
+  "dependencies": {
+    "ionic-datepicker": "~0.4.0"
   }
 }

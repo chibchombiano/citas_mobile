@@ -64,19 +64,3 @@ angular.module('Stripe')
 
     return dataFactory;
 }])
-
-.service('$ionicLoading', [function () {
-
-    var dataFactory = {};
-
-    dataFactory.show = function(){
-
-    }
-
-    dataFactory.hide = function(){
-        
-    }
-
-    return dataFactory;
-    
-}])

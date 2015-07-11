@@ -1,8 +1,13 @@
 angular.module('starter.controllers')
-.controller('MainCtrl', function ($scope, $rootScope, inicializarServicios, dataTableStorageFactory, $ionicLoading) {
+.controller('MainCtrl', function ($scope, $rootScope, inicializarServicios, dataTableStorageFactory, $ionicLoading, $state) {
 	
 	$scope.profileData = {};
 	$scope.clinicas = [];
+
+	$scope.nuevaCita = function(item){
+		$rootScope.clinica = item;
+		$state.go("nuevaCita");
+	}
 
 	function inicializar(){
 		$ionicLoading.show();

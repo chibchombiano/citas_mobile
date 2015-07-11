@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordova', 'auth', 'azure', 'Util', 'W8', 'Stripe', 'SignalR','Shared', 'Message', 'Global', 'directivas'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordova', 'auth', 'azure', 'Util', 'W8', 'Stripe', 'SignalR','Shared', 'Message', 'Global', 'directivas', 'ionic-timepicker', 'ionic-datepicker'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -77,6 +77,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordo
         requireLogin: true
       },
       controller: 'MainCtrl'
+  })
+
+  .state('nuevaCita', {
+      url: '/nuevaCita',
+      templateUrl: 'js/citas/view/nuevaCita.html',
+      data: {
+        requireLogin: true
+      },
+      controller: 'nuevaCitaCtrl'
   })
 
   .state('login', {

@@ -1,0 +1,32 @@
+<ion-view view-title="Cita">
+  <ion-content>
+  	
+	<div class="list">	  
+
+	  <div class="item">
+        <p><strong>dia de la cita</strong></p>
+        <ionic-datepicker idate="currentDate" disablepreviousdates="true" callback="datePickerCallback">
+	      <button class="button button-block button-positive ng-binding"> Seleccionar fecha</button>
+	  </ionic-datepicker>
+      </div>     
+    </div>
+
+     <div class="item">
+        <p><strong>Hora de la cita</strong></p>
+        <ionic-timepicker
+        title="'Hora de la cita'"
+        ok-button="'seleccionar'"
+        cancel-button="'cancelar'"
+        etime="slots[0].epochTime" 
+        format="slots[0].format" 
+        step="slots[0].step" 
+        callback="timePickerCallback">
+          <button class="button button-block button-positive overflowShow">
+            <strong etime="slots[0].epochTime" class="ng-binding">Seleccionar hora</strong>
+          </button>
+        </ionic-timepicker>
+      </div>     
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -47,10 +47,9 @@ angular.module('azure')
             })
           }
       else{
-
         //Key de pruebas
         var key = "APA91bFFa2kqzL9AE8utHBuoE4B-AtnQZKQuRPIdSP50PbeQEbjTsLUC4ZCyLOnKc7A1jYg91TuQ7_29PUqZjh5H9lyqT0-pmcDQE4JTWNLHlEdCMXyV3nPUCLQMdnGs22fEKSTO5ht9I5paXjCabIxT4veR55F9bfx2d4U7GRKaNRn3q212m2Q";
-        dataFactory.register(key);
+        //dataFactory.register(key);
       }
     }
 
@@ -58,11 +57,12 @@ angular.module('azure')
       var deferred = $q.defer();
       var key = key;
       $http.post(urlBase + "api/register", {key : key}).success(function (data) {                
-                updateRegister(data, deferred, key);
-            })
-            .error(function (error) {
-                
-            });
+          //falta validar
+          //updateRegister(data, deferred, key);
+      })
+      .error(function (error) {
+          
+      });
 
        return deferred.promise;
     }
@@ -114,12 +114,12 @@ angular.module('azure')
     var platform = getPlatform();
 
     //Falta habilitar para m
-    var item ={idhubazure : data, tag : tag, platform: platform, key : key};
+    var itemRegisterPush ={idhubazure : data, tag : tag, platform: platform, key : key};
 
     var req = {
                 method: 'PUT', 
                 url: urlBase + "api/register",
-                data: item,
+                data: itemRegisterPush,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded',
                 'Content-Type': 'application/json'
               }

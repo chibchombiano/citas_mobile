@@ -1,7 +1,6 @@
 angular.module('starter.controllers')
 .controller('LoginCtrl', function ($rootScope, $scope, $cordovaOauth, $localStorage, $location, getProfile, $state, signFactoryService, $ionicLoading) {	
 	
-
     $scope.login = function() {
      var item;
      var user;

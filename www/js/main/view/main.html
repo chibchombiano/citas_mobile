@@ -16,7 +16,7 @@
             </div> 
             
             <div class="list" ng-repeat="item in clinicas | filter:textoBuscar:strict">                
-                <a class="item item-avatar" href="#">
+                <a class="item item-avatar" ng-click="nuevaCita(item)">
                   <img ng-src="{{item.pathImagen}}">
                   <h2>{{item.nombreEntidad}}</h2>
                   <p>{{item.email}}</p>
