@@ -4,20 +4,25 @@
             <div class="item item-avatar">
                 <img ng-src="{{profileData.picture.data.url}}">
                 <h2>{{profileData.name}}</h2>
-                <p>{{profileData.id}}</p>
+                <p>{{profileData.email}}</p>
             </div>
-            <a href="#" class="item item-icon-left">
-                <i class="icon ion-earth"></i>
-                {{profileData.website}}
-            </a>
-            <a href="#" class="item item-icon-left">
-                <i class="icon ion-home"></i>
-                {{profileData.location.name}}
-            </a>
-            <a href="#" class="item item-icon-left">
-                <i class="icon ion-heart"></i>
-                {{profileData.relationship_status}}
-            </a>
+
+
+            <div class="list list-inset">
+              <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input ng-model="textoBuscar" type="text" placeholder="Search">
+              </label>
+            </div> 
+            
+            <div class="list" ng-repeat="item in clinicas | filter:textoBuscar:strict">                
+                <a class="item item-avatar" href="#">
+                  <img ng-src="{{item.pathImagen}}">
+                  <h2>{{item.nombreEntidad}}</h2>
+                  <p>{{item.email}}</p>
+                </a>
+            </div>
+
         </div>
     </ion-content>
 </ion-view>

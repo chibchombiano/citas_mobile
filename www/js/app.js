@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordova', 'auth', 'azure', 'Util', 'W8', 'Stripe', 'SignalR','Shared', 'Message', 'Global', 'directivas'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,7 +20,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordo
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {  
+  //$httpProvider.defaults.withCredentials = true;
+  $httpProvider.interceptors.push('authInterceptorService');
+
   $stateProvider
 
   .state('app', {
@@ -70,6 +73,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordo
   .state('main', {
       url: '/main',
       templateUrl: 'js/main/view/main.html',
+      data: {
+        requireLogin: true
+      },
       controller: 'MainCtrl'
   })
 
@@ -82,4 +88,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage', 'ngCordo
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
-});
+})
+
+.run(function ($rootScope, $state) {
+  $rootScope.$on('$stateChangeStart', function (event, toState, toParams, from, form2) {
+   
+      if(angular.isDefined(toState.data)){
+        var requireLogin = toState.data.requireLogin;        
+      }
+
+      if (requireLogin && typeof $rootScope.profileData === 'undefined') {
+        event.preventDefault();
+        $state.go('login');
+      }
+  })
+})

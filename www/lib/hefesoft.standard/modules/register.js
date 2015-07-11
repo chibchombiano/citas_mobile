@@ -1,0 +1,13 @@
+angular.module('fixes', []);
+angular.module('auth', []);
+angular.module('azure', []);
+angular.module('directivas', []);
+angular.module('Global', []);
+angular.module('Message', []);
+angular.module('Shared', []);
+angular.module('SignalR', []);
+angular.module('Stripe', []);
+angular.module('W8', []);
+angular.module('Upload', []);
+angular.module('Util', []);
+angular.module('providers', []);

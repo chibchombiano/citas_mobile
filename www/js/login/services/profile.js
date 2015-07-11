@@ -8,7 +8,7 @@ angular.module('starter.controllers')
         var deferred = $q.defer();
 
 		 if($localStorage.hasOwnProperty("accessToken") === true) {
-            $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: $localStorage.accessToken, fields: "id,name,gender,location,website,picture,relationship_status", format: "json" }}).then(function(result) {
+            $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: $localStorage.accessToken, fields: "id,name,email,gender,location,website,picture,relationship_status", format: "json" }}).then(function(result) {
                 $rootScope.profileData = result.data;
                 deferred.resolve(result.data);
             }, function(error) {                

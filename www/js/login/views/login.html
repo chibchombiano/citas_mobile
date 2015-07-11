@@ -1,18 +1,9 @@
-<ion-view ng-controller="LoginCtrl" title="Facebook Example">
-    <ion-content>
-        <div class="padding">
-            <button ng-click="login()" class="button button-block button-balanced">Oauth Sign In</button>
-            <p>
-                Clicking the above button will initiate an official browser sign in flow with Facebook.  You
-                will be redirected to the Facebook website to enter your credentials.
-            </p>
-        </div>
+<ion-view ng-controller="LoginCtrl" title="Ingreso">
+    <ion-content>        
 
-	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-	</fb:login-button>
-
-	<div id="status">
-	</div>
+    <button ng-click="login()" class="button button-full button-positive">
+      ingresar con facebook
+    </button>
 
 
     </ion-content>
