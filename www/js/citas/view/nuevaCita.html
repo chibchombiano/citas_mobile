@@ -5,9 +5,15 @@
 
 	  <div class="item">
         <p><strong>dia de la cita</strong></p>
-        <ionic-datepicker idate="currentDate" disablepreviousdates="true" callback="datePickerCallback">
-	      <button class="button button-block button-positive ng-binding"> Seleccionar fecha</button>
-	  </ionic-datepicker>
+        <ionic-datepicker 
+          idate="currentDate"
+          ok-button="'seleccionar'"
+          cancel-button="'cancelar'"
+          title="'Seleccione una fecha'"
+          disablepreviousdates="true" 
+          callback="datePickerCallback">
+	       <button class="button button-block button-positive ng-binding"> Seleccionar fecha</button>
+	      </ionic-datepicker>
       </div>     
     </div>
 
