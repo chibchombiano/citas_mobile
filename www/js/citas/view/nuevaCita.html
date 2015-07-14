@@ -17,7 +17,7 @@
       </div>     
     </div>
 
-     <div class="item">
+     <div class="item" ng-show="habilitarHora">
         <p><strong>Hora de la cita</strong></p>
         <ionic-timepicker
         title="'Hora de la cita'"
@@ -31,8 +31,20 @@
             <strong etime="slots[0].epochTime" class="ng-binding">Seleccionar hora {{time}}</strong>
           </button>
         </ionic-timepicker>
-      </div>     
+      </div>
+
+      <div class="item">
+        <button       
+        ng-show="habilitarGuardar"
+        ng-click="solicitarCita()"
+        class="button button-block button-positive overflowShow">
+          Solicitar cita
+        </button>
+      </div>
+
     </div>
+
+    
 
   </ion-content>
 </ion-view>

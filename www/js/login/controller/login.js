@@ -25,6 +25,7 @@ angular.module('starter.controllers')
                 registroHefesoft();
             })
         }, function(error) {
+            $ionicLoading.hide();
             alert("There was a problem signing in!  See the console for logs");
             console.log(error);
         });
