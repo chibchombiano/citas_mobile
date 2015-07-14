@@ -12,7 +12,7 @@
           title="'Seleccione una fecha'"
           disablepreviousdates="true" 
           callback="datePickerCallback">
-	       <button class="button button-block button-positive ng-binding"> Seleccionar fecha</button>
+	       <button class="button button-block button-positive ng-binding"> Seleccionar fecha {{fecha}}</button>
 	      </ionic-datepicker>
       </div>     
     </div>
@@ -28,7 +28,7 @@
         step="slots[0].step" 
         callback="timePickerCallback">
           <button class="button button-block button-positive overflowShow">
-            <strong etime="slots[0].epochTime" class="ng-binding">Seleccionar hora</strong>
+            <strong etime="slots[0].epochTime" class="ng-binding">Seleccionar hora {{time}}</strong>
           </button>
         </ionic-timepicker>
       </div>     

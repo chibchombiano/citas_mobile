@@ -132,7 +132,8 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                       totalSec += 43200;
                     }
                     scope.etime = totalSec;
-                    scope.callback(scope.etime);
+                    var hourString = scope.time.hours + ' : ' + scope.time.minutes + ' ' + scope.time.meridian;
+                    scope.callback(scope.etime, hourString, scope.time);
                   }
                 }
               ]

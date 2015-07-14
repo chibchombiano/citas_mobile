@@ -8,22 +8,37 @@ angular.module('starter.controllers')
     $scope.currentDate = new Date();
     $scope.pastDate = new Date(1521199764000);
     $scope.title = 'Fecha cita';
+    $scope.time;
+    $scope.fecha;
 
-    $scope.timePickerCallback = function (val) {
+    var horaSeleccionada;
+    var fechaSeleccionada;
+
+    $scope.timePickerCallback = function (val, hourString, time) {
       if (typeof (val) === 'undefined') {
         console.log('Time not selected');
       } else {
-        console.log('Selected time is : ', val);
+        console.log('Selected time is : ', val);        
+        $scope.time = hourString;
+        horaSeleccionada = time;
+        
+        if (time.meridian === "AM") {
+          fechaSeleccionada.hour(time.hours);
+        } else if (time.meridian === "PM") {
+          fechaSeleccionada.hour(parseInt(time.hours)+12);
+        }
+
+        fechaSeleccionada.minute(time.minutes);
       }
     };
 
     $scope.datePickerCallback = function (val) {
-      console.log('ionic-datepicker callback');
-
       if (typeof(val) === 'undefined') {
         console.log('No date selected');
-      } else {
+      } else {        
+        $scope.fecha = moment(val).format('DD/MM/YY');         
         console.log('Selected date is : ', val)
+        fechaSeleccionada = moment(val);
       }
 
     };
